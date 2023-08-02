@@ -5,26 +5,26 @@ using UnityEngine.AI;
 
 public class MoveToGoal : MonoBehaviour
 {
-    public Transform goal;
-    private Animator animator;
-    private NavMeshAgent agent;
+    public Transform goal1;
+    private Animator animator1;
+    private NavMeshAgent agent1;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
-        agent = GetComponent<NavMeshAgent>();
-        agent.destination = goal.position;
+        animator1 = GetComponentInChildren<Animator>();
+        agent1 = GetComponent<NavMeshAgent>();
+        agent1.destination = goal1.position;
     }
     // Update is called once per frame
     void Update()
     {
-        if (agent.hasPath)
+        if (agent1.hasPath)
         {
-            animator.SetBool("isRunning", true);
+            animator1.SetBool("isRunning", true);
         }
         else
         {
-            animator.SetBool("isRunning", false);
+            animator1.SetBool("isRunning", false);
         }
     }
 }
